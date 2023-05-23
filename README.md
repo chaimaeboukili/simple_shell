@@ -1,6 +1,6 @@
 Simple Shell group project
 
-## Team Project to create a simple shell using C language
+## Description
 **Background Context**
 
 Write a simple UNIX command interpreter.
