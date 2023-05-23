@@ -43,8 +43,7 @@ $ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
 	* wait4 (man 2 wait4)
 	* write (man 2 write)
 
-
-### Running
+## Running
 Enter the interactive mode after compilation:
 ```bash
 $ ./hsh
