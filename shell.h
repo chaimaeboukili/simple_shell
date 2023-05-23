@@ -22,7 +22,7 @@ void change_dir(char **argvv);
 int _strcmp(char *s1, char *s2);
 int _atoi(char *s);
 int _strlen(char *s);
-char *read_line();
+char *read_string(void);
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
 char *_getenv(char *env);
 
