@@ -1,4 +1,5 @@
-# 0x16. C - Simple Shell
+Simple Shell group project
+
 ## Team Project to create a simple shell using C language
 **Background Context**
 
