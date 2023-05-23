@@ -1,9 +1,13 @@
 Simple Shell group project
 
 ## Description
-**Background Context**
+This project is about creating our own simple UNIX command interpreter. The program must have the exact same output as sh (/bin/sh) as well as the exact same error output. the project is written by BOUKILI Chaimae and ELBOUAZIDY Abdellatif
 
-Write a simple UNIX command interpreter.
+## Compilation
+
+You can compile the files using this command to check that there are no errors:
+
+'''$ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh'''
 
 ## List of allowed functions and system calls
 
@@ -39,35 +43,6 @@ Write a simple UNIX command interpreter.
 	* wait4 (man 2 wait4)
 	* write (man 2 write)
 
-## Technologies & Tools:
-
-![Ubuntu](https://img.shields.io/badge/≡-Ubuntu-E95420?&style=flat-square&logo=Ubuntu&labelColor=282828)
-![Git](https://img.shields.io/badge/≡-Git-F05032?logo=git&style=flat-square&labelColor=282828)
-![GNU_Bash](https://img.shields.io/badge/≡-GNU_Bash-4EAA25?logo=GNU-Bash&style=flat-square&labelColor=282828)
-![Vim](https://img.shields.io/badge/≡-Vim-019733?logo=Vim&style=flat-square&logoColor=019733&labelColor=282828)
-![Vagrant](https://img.shields.io/badge/≡-Vagrant-1563FF?logo=Vagrant&style=flat-square&logoColor=1563FF&labelColor=282828)
-![C](https://img.shields.io/badge/≡-C-A8B9CC?logo=C&style=flat-square&labelColor=282828)
-![GNU_Emacs](https://img.shields.io/badge/≡-GNU_Emacs-7F5AB6?logo=GNU-Emacs&style=flat-square&labelColor=282828)
-![GitHub](https://img.shields.io/badge/≡-GitHub-181717?logo=GitHub&style=flat-square&labelColor=282828)
-
----
-
-## Requirements:
-Installed gcc (GNU Compiler Collection) version 4.8.4 or newer.
-
----
-
-## Getting it started
-### Clone repo using HTTPS
-```
-$ git clone https://github.com/jonyach/simple_shell.git
-```
-
-### Compilation
-You can compile the files using this command to check that there are no errors:
-```
-$ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
-```
 
 ### Running
 Enter the interactive mode after compilation:
@@ -80,8 +55,5 @@ $
 ```
 
 ## Authors
-* **Maxwell Owuor** - [Maxwellowuor254](https://github.com/Maxwellowuor254)
-* **Joseph Onyach** - [jonyach](https://github.com/jonyach)
-[<img src="https://img.shields.io/badge/Twitter-1DA1F2.svg?&style=plastic&logo=twitter&logoColor=white"/>](https://twitter.com/joseph_onyach)
-[<img src="https://img.shields.io/badge/Linkedin-0A66C2.svg?&style=plastic&logo=linkedin&logoColor=white"/>](https://www.linkedin.com/in/joseph-onyach-46bbb9223/)
-[<img src="https://img.shields.io/badge/GitHub-181717.svg?&style=plastic&logo=github&logoColor=white"/>](https://github.com/jonyach)
+* **ELBOUAZIDY Abdellatif** 
+* **BOUKILI Chaimae** 
