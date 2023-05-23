@@ -23,6 +23,7 @@ $ ./hsh
  simple@shell $ exit
 $
 
+
 LIST OF ALLOWED FUNCTIONS AND SYSTEM CALLS
 ----------------------------------------------------
 
