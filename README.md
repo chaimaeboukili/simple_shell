@@ -17,13 +17,10 @@ USAGE
 
 Enter the interactive mode after compilation:
 
-$ ./hsh 
-
-simple@shell $ /bin/ls
-
-simple@shell $
-
-simple@shell $ exit
+$ ./hsh        
+simple@shell $ /bin/ls     
+simple@shell $     
+simple@shell $ exit       
 $
 
 
