@@ -7,7 +7,7 @@ This project is about creating our own simple UNIX command interpreter. The prog
 
 You can compile the files using this command to check that there are no errors:
 
-'''$ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh'''
+$ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
 
 ## List of allowed functions and system calls
 
