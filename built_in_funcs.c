@@ -30,25 +30,18 @@ str = environ[i];
 */
 void change_directory(char **av)
 {
-char *path;
-int i, j;
 if (av[1] == NULL)
-path = getenv("HOME");
-else if (_strcmp(av[1], "-") == 0)
-{
-path = getenv("PWD");
-for (i = 0; path[i]; i++)
-;
-for (j = i; path[j] != '/'; j--)
-;
-if (path[j] == '/')
-path[j] = '\0';
-}
-else
-path = av[1];
-if (chdir(path) == -1)
-perror("lsh");
-getenv("PWD");
+	{
+		fprintf(stderr, "hsh: expected argument to \"cd\"\n");
+	}
+	else
+	{
+		if (chdir(av[1]) != 0)
+		{
+			perror("hsh");
+		}
+	}
+	return (1);
 }
 
 /**
@@ -58,16 +51,9 @@ getenv("PWD");
 */
 void ft_exit(char **av)
 {
-if (av[1] == NULL)
-{
-free(av);
-exit(0);
-}
-else
-{
-free(av);
-exit(_atoi(av[1]));
-}
+(void)av;
+	free(av);
+	return (200);
 }
 
 /**
