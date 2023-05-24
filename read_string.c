@@ -10,18 +10,17 @@
 
 char *read_string(void)
 {
-char *string = NULL;
-size_t length = 0;
-int read;
+char *lineptr = NULL;
+	size_t charter_user = 0;
 
-read = getline(&string, &length, stdin);
-if (read == -1)
-{
-if (isatty(STDIN_FILENO))
-write(1, "\n", 1);
-exit(0);
-}
-string = strtok(string, "\n");
+	if (isatty(STDIN_FILENO))
+		write(STDOUT_FILENO, "$ ", 2);
 
-return (string);
+	if (getline(&lineptr, &charter_user, stdin) == -1)
+	{
+		free(lineptr);
+		return (NULL);
+	}
+
+	return (lineptr);
 }
