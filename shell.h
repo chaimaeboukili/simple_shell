@@ -12,7 +12,6 @@ extern char **environ;
 
 char *concat_all(char *s1, char *s2);
 char *find_path(char *av);
-char **split(char *line, int bufsize);
 int check_builtin(char *argvv);
 void print_env(void);
 void exec_builtins(char **argvv, int i);
@@ -29,12 +28,11 @@ char *_getenv(char *env);
 
 int _help(char **args);
 int _ctrld(char **args);
-char *builtin_str[] = {"cd", "help", "exit", "^D"};
-int (*builtin_func[]) (char **) = {&_cd, &_help, &_exit, &_ctrld};
+char *builtin_str[] = {"help", "^D"};
 int _num_builtins(void);
 int _fork_fun(char **arg, char **av, char **env, char *lineptr, int np, int c);
 char *find_path(char *av);
-char *_getenv(char *env);
+char _getenv(char **env);
 char *_strcpy(char *dest, char *src);
 char *concat_all(char *str1, char *str2);
 int _strcmp(char *str1, char *str2);
@@ -46,6 +44,7 @@ void change_directory(char **av);
 void ft_exit(char **av);
 void exec_builtins(char **av, int index);
 int values_of_path(char **arg, char **env);
+char *_strcat(char *dest, char *src);
 
 
 #endif
