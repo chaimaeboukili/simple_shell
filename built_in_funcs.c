@@ -52,7 +52,7 @@ getenv("PWD");
 }
 
 /**
-* _exit - exit with a status code
+* ft_exit - exit with a status code
 * @av: the given arguments
 *Return: nothing
 */
