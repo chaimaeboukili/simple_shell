@@ -7,36 +7,24 @@
  */
 char *find_path(char *av)
 {
-	char *path = NULL, *token = NULL, *cpath = NULL;
-	int i = 0, len = 0;
-	struct stat sfile;
+	size_t index = 0, var = 0, count = 5;
+	char *path = NULL;
 
-	path = _getenv("PATH");
-	for (len = 0; path[len]; len++)
+	for (index = 0; _strncmp(env[index], "PATH=", 5); index++)
 		;
-	cpath = malloc(sizeof(char) * len + 1);
+	if (env[index] == NULL)
+		return (NULL);
 
-	for (i = 0; path[i]; i++)
-		cpath[i] = path[i];
-	cpath[i] = '\0';
+	for (count = 5; env[index][var]; var++, count++)
+		;
+	path = malloc(sizeof(char) * (count + 1));
 
-	token = strtok(cpath, ":");
-	token = concat_all(token, "/");
-	token = concat_all(token, av);
-	while (token != NULL)
-	{
-		if (stat(token, &sfile) == 0)
-			return (token);
+	if (path == NULL)
+		return (NULL);
 
-		token = strtok(NULL, ":");
-		if (token != NULL)
-		{
-			token = concat_all(token, "/");
-			token = concat_all(token, av);
-		}
+	for (var = 5, count = 0; env[index][var]; var++, count++)
+		path[count] = env[index][var];
 
-	}
-free(token);
-free(cpath);
-	return (NULL);
+	path[count] = '\0';
+	return (path);
 }
