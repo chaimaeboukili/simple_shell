@@ -1,10 +1,3 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <sys/types.h>
-#include <sys/wait.h>
-#include <sys/stat.h>
-#include <signal.h>
 #include "shell.h"
 
 /**
@@ -15,28 +8,12 @@
 
 char *_getenv(char *env)
 {
-int i, j;
-char *val;
+size_t run = 0;
 
-if (!env)
-return (0);
-for (i = 0; environ[i]; i++)
-{
-j = 0;
-if (env[j] == environ[i][j])
-{
-while (env[j])
-{
-if (env[j] != environ[i][j])
-break;
-j++;
-}
-if (env[j] == '\0')
-{
-val = (environ[i] + j + 1);
-return (val);
-}
-}
-}
-return (0);
+	while (env[run])
+	{
+		write(STDOUT_FILENO, env[run], _strlen(env[run]));
+		write(STDOUT_FILENO, "\n", 1);
+		run++;
+	}
 }
