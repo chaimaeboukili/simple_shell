@@ -1,7 +1,5 @@
 #include "shell.h"
-int _cd(char **args);
 int _help(char **args);
-int _exit(char **args);
 int _ctrld(char **args);
 
 /*
@@ -19,28 +17,6 @@ int (*builtin_func[]) (char **) = {&_cd, &_help, &_exit, &_ctrld};
 int _num_builtins(void)
 {
 	return (sizeof(builtin_str) / sizeof(char *));
-}
-
-
-/**
- * _cd - to change directories
- * @args: List of args.  args[0] is "cd".  args[1] is the directory.
- * Return: 1 on success
- */
-int _cd(char **args)
-{
-	if (args[1] == NULL)
-	{
-		fprintf(stderr, "hsh: expected argument to \"cd\"\n");
-	}
-	else
-	{
-		if (chdir(args[1]) != 0)
-		{
-			perror("hsh");
-		}
-	}
-	return (1);
 }
 
 /**
@@ -63,17 +39,6 @@ int _help(char **args)
 	return (1);
 }
 
-/**
- * _exit - to exit the shell
- * @args: List of args.
- * Return: Always returns 0, to terminate execution.
- */
-int _exit(char **args)
-{
-	(void)args;
-	free(args);
-	return (200);
-}
 
 /**
  * _ctrld -  to handle "^D" call
@@ -88,7 +53,7 @@ int _ctrld(char **args)
 }
 
 /**
- *fork_fun - foo that create a fork.
+ *_fork_fun - foo that create a fork.
  *@arg: Command and values path.
  *@av: Has the name of our program.
  *@env: Environment
@@ -98,7 +63,7 @@ int _ctrld(char **args)
  *Return: 0 success
  */
 
-int fork_fun(char **arg, char **av, char **env, char *lineptr, int np, int c)
+int _fork_fun(char **arg, char **av, char **env, char *lineptr, int np, int c)
 {
 	pid_t child;
 	int status, i = 0;
