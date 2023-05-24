@@ -100,14 +100,13 @@ int _ctrld(char **args)
 
 int fork_fun(char **arg, char **av, char **env, char *lineptr, int np, int c)
 {
-
 	pid_t child;
 	int status, i = 0;
 	char *format = "%s: %d: %s: not found\n";
 
 	if (arg[0] == NULL)
 		return (1);
-	for (i = 0; i < lsh_num_builtins(); i++)
+	for (i = 0; i < _num_builtins(); i++)
 	{
 		if (_strcmp(arg[0], builtin_str[i]) == 0)
 			return (builtin_func[i](arg));
