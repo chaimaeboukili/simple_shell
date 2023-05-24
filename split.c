@@ -2,8 +2,7 @@
 
 /**
 * split - split a string
-* @str: the given string
-* @buffer: buffer size
+* @lineptr: the input line
 *Return: the string
 */
 
