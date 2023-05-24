@@ -6,7 +6,7 @@
 * Return: pointer to char
 */
 
-char *_getenv(char *env)
+char _getenv(char **env)
 {
 size_t run = 0;
 
