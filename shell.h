@@ -26,5 +26,28 @@ char *read_string();
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
 char *_getenv(char *env);
 
+int _cd(char **args);
+int _help(char **args);
+int _exit(char **args);
+int _ctrld(char **args);
+char *builtin_str[] = {"cd", "help", "exit", "^D"};
+int (*builtin_func[]) (char **) = {&_cd, &_help, &_exit, &_ctrld};
+int _num_builtins(void);
+int fork_fun(char **arg, char **av, char **env, char *lineptr, int np, int c)
+char *find_path(char *av);
+char *_getenv(char *env);
+char *_strcpy(char *dest, char *src);
+char *concat_all(char *str1, char *str2);
+int _strcmp(char *str1, char *str2);
+int _atoi(char *str);
+int _strlen(char *str);
+char **split(char *lineptr);
+void print_env(void);
+void change_directory(char **av);
+void ft_exit(char **av);
+void exec_builtins(char **av, int index);
+int values_of_path(char **arg, char **env);
+
+
 #endif
 
