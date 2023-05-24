@@ -47,16 +47,13 @@ int _atoi(char *str)
  */
 int _strcmp(char *str1, char *str2)
 {
-int i, diff = 0;
-for (i = 0; str1[i] || str2[i]; i++)
-{
-if (str1[i] != str2[i])
-{
-diff = str1[i] - str2[i];
-break;
-}
-}
-return (diff);
+int i = 0;
+	int val;
+
+	while (str1[i] != 0 && str2[i] != 0 && str1[i] == str2[i])
+		i++;
+val = str1[i] - str2[i];
+return (val);
 }
 
 /**
@@ -93,3 +90,22 @@ char *concat_all(char *str1, char *str2)
 	return (concat_str);
 }
 
+/**
+ * _strcpy - copies the string fromn the source into destination
+ * @dest: destination of the copy
+ * @src: source of the copy
+ *
+ * Return: char pointer to dest
+ */
+
+char *_strcpy(char *dest, char *src)
+{
+	int i = 0;
+
+	for (i = 0; src[i] != '\0'; i++)
+	{
+		dest[i] = src[i];
+	}
+	dest[i + 1] = 0;
+	return (dest);
+}
