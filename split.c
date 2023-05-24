@@ -6,38 +6,36 @@
 * @buffer: buffer size
 *Return: the string
 */
-char **split(char *str, int buffer)
-{
-char *tkn = NULL;
-int i = 0;
-char **av = malloc(sizeof(char *) * buffer);
-if (!av)
-{
-write(STDERR_FILENO, "hsh: allocation error\n", 22);
-free(av);
-exit(0);
-}
 
-tkn = strtok(str, " ");
-while (tkn != NULL)
+char **split(char *lineptr)
 {
-av[i] = tkn;
-tkn = strtok(NULL, " ");
-i++;
-if (i >= buffer)
-{
-buffer += BUFFER_LEN;
-av = _realloc(av, sizeof(av), buffer *sizeof(char *));
-if (!av)
-{
-write(STDERR_FILENO, "hsh: allocation error\n", 22);
-exit(0);
-}
-}
+	char **user_command = NULL;
+	char *token = NULL;
+	size_t i = 0;
+	int size = 0;
 
-}
-av[i] = NULL;
+	if (lineptr == NULL)
+		return (NULL);
 
-return (av);
+	for (i = 0; lineptr[i]; i++)
+	{
+		if (lineptr[i] == ' ')
+			size++;
+	}
+	if ((size + 1) == _strlen(lineptr))
+		return (NULL);
+	user_command = malloc(sizeof(char *) * (size + 2));
+	if (user_command == NULL)
+		return (NULL);
+
+	token = strtok(lineptr, " \n\t\r");
+
+	for (i = 0; token != NULL; i++)
+	{
+		user_command[i] = token;
+		token = strtok(NULL, " \n\t\r");
+	}
+	user_command[i] = NULL;
+	return (user_command);
 }
 
