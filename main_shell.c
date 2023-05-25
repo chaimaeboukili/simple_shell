@@ -6,6 +6,7 @@
  * @env: Environment
  * Return: _exit = 0.
  */
+
 int main(int ac, char **av, char **env)
 {
 	int pathValue = 0, status = 0, is_path = 0;
