@@ -16,7 +16,7 @@ int main(int ac, char **av, char **env)
 	while (1)
 	{
 		errno = 0;
-		line = _getline_command();
+		line = _read_string();
 		if (line == NULL && errno == 0)
 			return (0);
 		if (line)
