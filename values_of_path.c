@@ -13,7 +13,7 @@ int values_of_path(char **arg, char **env)
 
 	if (stat(*arg, &stat_lineptr) == 0)
 		return (-1);
-	path_rela = _get_path(env);/** gets the content of "PATH="*/
+	path_rela = _find_path(env);/** gets the content of "PATH="*/
 	if (!path_rela)
 		return (-1);
 	token = strtok(path_rela, ":"); /**tokenizes the content of "PATH="*/
