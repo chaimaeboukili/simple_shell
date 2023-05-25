@@ -30,7 +30,7 @@ int _ctrld(char **args);
 char *builtin_str[] = {"help", "^D"};
 int _num_builtins(void);
 int _fork_fun(char **arg, char **av, char **env, char *lineptr, int np, int c);
-char *find_path(char **env);
+char *_find_path(char **env);
 char _getenv(char **env);
 char *_strcpy(char *dest, char *src);
 char *concat_all(char *str1, char *str2);
