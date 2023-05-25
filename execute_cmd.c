@@ -2,8 +2,7 @@
 #include <errno.h>
 int _help(char **args);
 int _ctrld(char **args);
-int _exit(char **args);
-int _cd(char **args);
+
 
 /*
  * List of commands, followed by their functions.
