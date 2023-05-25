@@ -8,9 +8,9 @@ int _cd(char **args);
 /*
  * List of commands, followed by their functions.
  */
-char *builtin_str[] = {"cd", "help", "exit", "^D"};
+char *builtin_str[] = {"help", "^D"};
 
-int (*builtin_func[]) (char **) = {&lsh_cd, &lsh_help, &lsh_exit, &lsh_ctrld};
+int (*builtin_func[]) (char **) = {&_help, &_ctrld};
 
 /**
  * _num_builtins - the size
@@ -26,21 +26,7 @@ int _num_builtins(void)
  * @args: List of args.  args[0] is "cd".  args[1] is the directory.
  * Return: 1 on success
  */
-int _cd(char **args)
-{
-	if (args[1] == NULL)
-	{
-		fprintf(stderr, "hsh: expected argument to \"cd\"\n");
-	}
-	else
-	{
-		if (chdir(args[1]) != 0)
-		{
-			perror("hsh");
-		}
-	}
-	return (1);
-}
+
 /**
  * _help - the help for the shell
  * @args: List of args.  Not examined.
@@ -61,17 +47,7 @@ int _help(char **args)
 	return (1);
 }
 
-/**
- * _exit - to exit the shell
- * @args: List of args.  Not examined.
- * Return: Always returns 0, to terminate execution.
- */
-int _exit(char **args)
-{
-	(void)args;
-	free(args);
-	return (200);
-}
+
 /**
  * _ctrld -  to handle "^D" call
  * @args: List of args.
