@@ -10,7 +10,7 @@ char *find_path(char *av)
 	size_t index = 0, var = 0, count = 5;
 	char *path = NULL;
 
-	for (index = 0; _strncmp(env[index], "PATH=", 5); index++)
+	for (index = 0; _strcmp(env[index], "PATH=", 5); index++)
 		;
 	if (env[index] == NULL)
 		return (NULL);
