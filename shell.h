@@ -15,19 +15,14 @@ int check_builtin(char *argvv);
 void print_env(void);
 void exec_builtins(char **argvv, int i);
 void execute_cmd(char **argvv);
-void ft_exit(char **argvv);
-void change_directory(char **argvv);
-int _strcmp(char *s1, char *s2);
 int _atoi(char *s);
-int _strlen(char *s);
-char *read_string();
+char *_read_string();
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
 
 
 
 int _help(char **args);
 int _ctrld(char **args);
-char *builtin_str[] = {"help", "^D"};
 int _num_builtins(void);
 int _fork_fun(char **arg, char **av, char **env, char *lineptr, int np, int c);
 char *_find_path(char **env);
