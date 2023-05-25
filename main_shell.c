@@ -22,7 +22,7 @@ int main(int ac, char **av, char **env)
 		if (line)
 		{
 			pathValue++;
-			commands = tokenize(line);
+			commands = split(line);
 			if (!commands)
 				free(line);
 			if (!_strcmp(commands[0], "env"))
