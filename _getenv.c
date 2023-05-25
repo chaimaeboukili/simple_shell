@@ -6,14 +6,30 @@
 * Return: pointer to char
 */
 
-char _getenv(char **env)
+char *_getenv(char *env)
 {
-size_t run = 0;
+int i, j;
+char *val;
 
-	while (env[run])
-	{
-		write(STDOUT_FILENO, env[run], _strlen(env[run]));
-		write(STDOUT_FILENO, "\n", 1);
-		run++;
-	}
+if (!env)
+return (0);
+for (i = 0; environ[i]; i++)
+{
+j = 0;
+if (env[j] == environ[i][j])
+{
+while (env[j])
+{
+if (env[j] != environ[i][j])
+break;
+j++;
+}
+if (env[j] == '\0')
+{
+val = (environ[i] + j + 1);
+return (val);
+}
+}
+}
+return (0);
 }
