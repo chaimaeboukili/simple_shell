@@ -32,7 +32,7 @@ write(STDOUT_FILENO, "$ ", 2);
 
 line = _read_string();
 
-av = split(line, buffer);
+av = split(lineptr);
 if (!av || av[0] == NULL)
 {
 execute_cmd(av);
