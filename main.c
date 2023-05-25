@@ -19,7 +19,7 @@ write(1, "\n$ ", 3);
 */
 int main(void)
 {
-int buffer = BUFFER_LEN, i;
+int i;
 char *line;
 char **av;
 struct stat f;
@@ -32,7 +32,7 @@ write(STDOUT_FILENO, "$ ", 2);
 
 line = _read_string();
 
-av = split(lineptr);
+av = split(line);
 if (!av || av[0] == NULL)
 {
 execute_cmd(av);
