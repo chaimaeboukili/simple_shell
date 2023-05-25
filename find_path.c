@@ -5,7 +5,7 @@
  * @av: the command that looks for its path
  *Return: the full path of the command (string)
  */
-char *_find_path(char **env)
+char *_find_path(char *env)
 {
 	size_t index = 0, var = 0, count = 5;
 	char *path = NULL;
