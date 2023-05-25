@@ -30,7 +30,7 @@ while (1)
 if (isatty(STDIN_FILENO) == 1)
 write(STDOUT_FILENO, "$ ", 2);
 
-line = read_string();
+line = _read_string();
 
 av = split(line, buffer);
 if (!av || av[0] == NULL)
@@ -46,7 +46,7 @@ else
 {
 if (stat(av[0], &f) != 0)
 {
-av[0] = find_path(av[0]);
+av[0] = _find_path(av[0]);
 }
 
 execute_cmd(av);
