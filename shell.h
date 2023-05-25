@@ -20,7 +20,7 @@ char *_read_string();
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
 
 
-
+size_t _strncmp(char *s1, char *s2, size_t n);
 int _help(char **args);
 int _ctrld(char **args);
 int _num_builtins(void);
