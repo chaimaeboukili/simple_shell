@@ -21,7 +21,7 @@ int main(void)
 {
 int i;
 char *line;
-char **av;
+char *av;
 struct stat f;
 
 signal(SIGINT, signal_handler);
