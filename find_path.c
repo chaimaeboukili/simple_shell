@@ -1,11 +1,11 @@
 #include "shell.h"
 
 /**
- * find_path - find the command's path
+ * _find_path - find the command's path
  * @av: the command that looks for its path
  *Return: the full path of the command (string)
  */
-char *find_path(char *av)
+char *_find_path(char **env)
 {
 	size_t index = 0, var = 0, count = 5;
 	char *path = NULL;
