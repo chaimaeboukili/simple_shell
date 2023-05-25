@@ -1,4 +1,5 @@
 #include "shell.h"
+#include <errno.h>
 /**
  * main - the Main arguments functions
  * @ac: Count of argumnents
