@@ -1,13 +1,14 @@
 #include "shell.h"
+#include <errno.h>
 int _help(char **args);
 int _ctrld(char **args);
 
 /*
  * List of commands, followed by their functions.
  */
-char *builtin_str[] = {"cd", "help", "exit", "^D"};
+char *builtin_str[] = {"help", "^D"};
 
-int (*builtin_func[]) (char **) = {&_cd, &_help, &_exit, &_ctrld};
+int (*builtin_func[]) (char **) = {&_help, &_ctrld};
 
 /**
  * _num_builtins - the size
