@@ -3,12 +3,12 @@
 #include <string.h>
 
 /**
-* read_string - read a string from input
+* _read_string - read a string from input
 *
 * Return: string to read
 */
 
-char *read_string(void)
+char *_read_string(void)
 {
 char *lineptr = NULL;
 	size_t charter_user = 0;
