@@ -11,7 +11,6 @@
 extern char **environ;
 
 char *concat_all(char *s1, char *s2);
-char *find_path(char *av);
 int check_builtin(char *argvv);
 void print_env(void);
 void exec_builtins(char **argvv, int i);
