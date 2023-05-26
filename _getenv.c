@@ -5,10 +5,9 @@
 * @env: the environment in args
 * Return: pointer to char
 */
-
 void _getenv(char **env)
 {
-  size_t run = 0;
+	size_t run = 0;
 
 	while (env[run])
 	{

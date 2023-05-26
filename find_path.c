@@ -2,7 +2,7 @@
 
 /**
  * _find_path - find the command's path
- * @av: the command that looks for its path
+ * @env: the command that looks for its path
  *Return: the full path of the command (string)
  */
 char *_find_path(char **env)

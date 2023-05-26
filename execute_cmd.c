@@ -20,11 +20,6 @@ int _num_builtins(void)
 {
 	return (sizeof(builtin_str) / sizeof(char *));
 }
-/**
- * _cd - to change directories
- * @args: List of args.  args[0] is "cd".  args[1] is the directory.
- * Return: 1 on success
- */
 
 /**
  * _help - the help for the shell

@@ -39,7 +39,7 @@ int main(int ac, char **av, char **env)
 				if (is_path == 0)
 					free(commands[0]);
 			}
-			free(commands); 
+			free(commands);
 		}
 		else
 		{
